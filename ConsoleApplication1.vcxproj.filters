@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Number System Converter">
+      <UniqueIdentifier>{e5bb680c-de33-4ea3-a68c-b5825f746ef4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Main">
+      <UniqueIdentifier>{11ed2d9b-ada0-4531-abff-d174013b7dea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Number System Operation">
+      <UniqueIdentifier>{9cce3a66-1306-4230-be99-8e41bb9e416b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Binary Bitwise Operation">
+      <UniqueIdentifier>{2872eceb-5a34-4eed-b950-34a992ef5784}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sieve Of Erathosthenes">
+      <UniqueIdentifier>{acbe2a4f-4937-49f2-98af-cf84dd551157}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Converter.cpp">
+      <Filter>Source Files\Number System Converter</Filter>
+    </ClCompile>
+    <ClCompile Include="ConverterDebug.cpp">
+      <Filter>Source Files\Number System Converter</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Operation.cpp">
+      <Filter>Source Files\Number System Operation</Filter>
+    </ClCompile>
+    <ClCompile Include="RecyclableMethods.cpp">
+      <Filter>Source Files\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Bitwise.cpp">
+      <Filter>Source Files\Binary Bitwise Operation</Filter>
+    </ClCompile>
+    <ClCompile Include="Sieve.cpp">
+      <Filter>Source Files\Sieve Of Erathosthenes</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Converter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RecyclableMethods.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Operation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bitwise.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Libraries.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sieve.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
