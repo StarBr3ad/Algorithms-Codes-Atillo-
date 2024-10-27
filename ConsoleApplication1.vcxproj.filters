@@ -28,6 +28,9 @@
     <Filter Include="Source Files\Sieve Of Erathosthenes">
       <UniqueIdentifier>{acbe2a4f-4937-49f2-98af-cf84dd551157}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Ceasear Cipher">
+      <UniqueIdentifier>{cfdcb856-7355-4955-ae72-a90224c159d4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Converter.cpp">
@@ -51,6 +54,9 @@
     <ClCompile Include="Sieve.cpp">
       <Filter>Source Files\Sieve Of Erathosthenes</Filter>
     </ClCompile>
+    <ClCompile Include="CeasarCipher.cpp">
+      <Filter>Source Files\Ceasear Cipher</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Converter.h">
@@ -69,6 +75,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Sieve.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CeasarCipher.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

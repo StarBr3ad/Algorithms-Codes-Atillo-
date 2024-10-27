@@ -28,6 +28,12 @@ int main()
     //SIEVE OF ERATHOSTHENES
     //MAIN_LOOP_SIEVE();
 
+
+    //GREEDY ALGOS
+
+
+    //ENCRYPTION
+    
 }
 
 void writeWarning()

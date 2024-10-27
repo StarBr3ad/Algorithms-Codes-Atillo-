@@ -129,6 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bitwise.cpp" />
+    <ClCompile Include="CeasarCipher.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="ConverterDebug.cpp" />
     <ClCompile Include="Operation.cpp" />
@@ -138,6 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bitwise.h" />
+    <ClInclude Include="CeasarCipher.h" />
     <ClInclude Include="Libraries.h" />
     <ClInclude Include="Operation.h" />
     <ClInclude Include="RecyclableMethods.h" />
