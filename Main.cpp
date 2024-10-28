@@ -39,11 +39,15 @@ int main()
     //PRIME FACTORIZATION
     //primeFactorFinder.MAIN_LOOP();
 
+    //GCD AND LCM CALCULATOR
+    GCDandLCMCalculator.MAIN_LOOP();
+
     //EUCLIDEAN ALGORITHM
     //GCDCalculator.MAIN_LOOP();
 
-    //GCD AND LCM CALCULATOR
-    GCDandLCMCalculator.MAIN_LOOP();
+    //FIBBONACI SEQUENCE
+
+
 
     //GREEDY ALGOS
 

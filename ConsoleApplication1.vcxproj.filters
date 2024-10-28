@@ -92,5 +92,8 @@
     <ClInclude Include="GCDandLCM.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Fibbonaci.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
