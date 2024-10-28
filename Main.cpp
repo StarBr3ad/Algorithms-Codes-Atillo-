@@ -3,6 +3,7 @@
 #include "RecyclableMethods.h"
 #include "Bitwise.h"
 #include "Sieve.h"
+#include "PrimeFactorization.h"
 
 using namespace std;
 
@@ -13,8 +14,11 @@ int main()
     Converter numSystemConverter;
     Operation numSystemCalculator;
     Bitwise BIN_BitwiseOperator;
+    SieveOfErathosthenes SOECalculator;
+    PrimeFactorization primeFactorFinder;
 
     writeWarning();
+
 
     //CONVERTER
     //numSystemConverter.MAIN_LOOP();
@@ -26,8 +30,10 @@ int main()
     //BIN_BitwiseOperator.MAIN_LOOP();
 
     //SIEVE OF ERATHOSTHENES
-    //MAIN_LOOP_SIEVE();
+    //SOECalculator.MAIN_LOOP_SIEVE();
 
+    //PRIME FACTORIZATION
+    primeFactorFinder.MAIN_LOOP();
 
     //GREEDY ALGOS
 

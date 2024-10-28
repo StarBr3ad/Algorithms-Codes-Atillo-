@@ -1,62 +1,6 @@
 #include "Sieve.h"
 
-void getInput(int& minRange, int & maxRange)
-{
-	cout << "NO INPUT CHECKER ON THIS ONE BRO IM NOW WASTING SHIT JUST INPUT NUMBERS\n\n\n" << endl;
-	cout << "Input Range:" << endl;
-	cout << "Min: "; cin >> minRange;
-	cout << "Max: "; cin >> maxRange;
-}
-
-bool isPrime_KSI(int number)
-{
-	if (number < 2) return false;
-
-	if (number == 2) return true;
-	if (number % 2 == 0) return false;
-
-	for (int i = 3; i <= sqrt(number); i += 2)
-	{
-		if (number % i == 0) {
-			return false; 
-		}
-	}
-
-	return true;
-}
-
-void getAllThePrime(int minRange, int maxRange, vector<int>& primeNumbersArr)
-{
-	bool temp = false;
-	for (int i = minRange; i < maxRange; i++)
-	{
-		temp = isPrime_KSI(i);
-
-		if (temp)
-		{
-			primeNumbersArr.push_back(i);
-		}
-	}
-}
-
-void writeThePrimes(vector<int> primeNumbersArr)
-{
-	databaseStyleTable SieveTable;
-
-	vector<string> header, rows;
-	header.push_back("h1"); header.push_back("h2"); header.push_back("h3"); header.push_back("h4"); header.push_back("h5"); header.push_back("h6");
-
-	cout << "\n\n\nTHE PRIME NUMBERS: " << endl;
-	for (int i = 0; i < primeNumbersArr.size(); i++)
-	{
-		rows.push_back(to_string(primeNumbersArr[i]));
-	}
-
-	SieveTable.createTable(header, rows);
-	SieveTable.drawTable();
-}
-
-void MAIN_LOOP_SIEVE()
+void SieveOfErathosthenes::MAIN_LOOP_SIEVE()
 {
 	int minRange = 0,
 		maxRange = 0,
@@ -74,19 +18,77 @@ void MAIN_LOOP_SIEVE()
 		writeThePrimes(primeNumbersArr);
 
 		//CLEAR BUFFER
-			minRange = 0;
-			maxRange = 0;
+		minRange = 0;
+		maxRange = 0;
 		//CLEAR BUFFER
-		
+
 		//EXIT LOOP
-			tryAgainFlag = -1;
-			EXIT_MENU_LOOP(tryAgainFlag, input);
+		tryAgainFlag = -1;
+		EXIT_MENU_LOOP(tryAgainFlag, input);
 		//EXIT LOOP
 	}
-	
 }
 
-void EXIT_MENU_LOOP(int& tryAgainFlag, int& input)
+
+
+void SieveOfErathosthenes::getInput(int& minRange, int& maxRange)
+{
+	cout << "NO INPUT CHECKER ON THIS ONE BRO IM NOW WASTING SHIT JUST INPUT NUMBERS\n\n\n" << endl;
+	cout << "Input Range:" << endl;
+	cout << "Min: "; cin >> minRange;
+	cout << "Max: "; cin >> maxRange;
+}
+
+bool SieveOfErathosthenes::isPrime_KSI(int number)
+{
+	if (number < 2) return false;
+
+	if (number == 2) return true;
+	if (number % 2 == 0) return false;
+
+	for (int i = 3; i <= sqrt(number); i += 2)
+	{
+		if (number % i == 0) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+void SieveOfErathosthenes::getAllThePrime(int minRange, int maxRange, vector<int>& primeNumbersArr)
+{
+	bool temp = false;
+	for (int i = minRange; i < maxRange; i++)
+	{
+		temp = isPrime_KSI(i);
+
+		if (temp)
+		{
+			primeNumbersArr.push_back(i);
+		}
+	}
+}
+
+void SieveOfErathosthenes::writeThePrimes(vector<int> primeNumbersArr)
+
+{
+	databaseStyleTable SieveTable;
+
+	vector<string> header, rows;
+	header.push_back("h1"); header.push_back("h2"); header.push_back("h3"); header.push_back("h4"); header.push_back("h5"); header.push_back("h6");
+
+	cout << "\n\n\nTHE PRIME NUMBERS: " << endl;
+	for (int i = 0; i < primeNumbersArr.size(); i++)
+	{
+		rows.push_back(to_string(primeNumbersArr[i]));
+	}
+
+	SieveTable.createTable(header, rows);
+	SieveTable.drawTable();
+}
+
+void SieveOfErathosthenes::EXIT_MENU_LOOP(int& tryAgainFlag, int& input)
 {
 	//TRYAGAINFLAG:
 	//-1 = DEFAULT (WILL REFRESH)

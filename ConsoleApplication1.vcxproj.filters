@@ -57,6 +57,9 @@
     <ClCompile Include="CeasarCipher.cpp">
       <Filter>Source Files\Ceasear Cipher</Filter>
     </ClCompile>
+    <ClCompile Include="PrimeFactorization.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Converter.h">
@@ -78,6 +81,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CeasarCipher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimeFactorization.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
