@@ -31,6 +31,9 @@
     <Filter Include="Source Files\Ceasear Cipher">
       <UniqueIdentifier>{cfdcb856-7355-4955-ae72-a90224c159d4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\fUCKtorFinder%28Prime Factorization%29">
+      <UniqueIdentifier>{a899625a-1356-4632-9aa4-54b358739934}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Converter.cpp">
@@ -58,7 +61,7 @@
       <Filter>Source Files\Ceasear Cipher</Filter>
     </ClCompile>
     <ClCompile Include="PrimeFactorization.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\fUCKtorFinder%28Prime Factorization%29</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -93,6 +96,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Fibbonaci.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EgyptianFrac.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClInclude Include="Bitwise.h" />
     <ClInclude Include="CeasarCipher.h" />
+    <ClInclude Include="EgyptianFrac.h" />
     <ClInclude Include="Euclidean.h" />
     <ClInclude Include="Fibbonaci.h" />
     <ClInclude Include="GCDandLCM.h" />

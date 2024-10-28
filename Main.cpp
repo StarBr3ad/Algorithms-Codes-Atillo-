@@ -6,6 +6,8 @@
 #include "PrimeFactorization.h"
 #include "Euclidean.h"
 #include "GCDandLCM.h"
+#include "Fibbonaci.h"
+#include "EgyptianFrac.h"
 
 using namespace std;
 
@@ -20,6 +22,8 @@ int main()
     PrimeFactorization primeFactorFinder;
     Euclidean GCDCalculator;
     GCDandLCMCalc GCDandLCMCalculator;
+    Fibbonaci fib;
+    NiggasFraction egyptianFrac;
 
     writeWarning();
 
@@ -40,12 +44,18 @@ int main()
     //primeFactorFinder.MAIN_LOOP();
 
     //GCD AND LCM CALCULATOR
-    GCDandLCMCalculator.MAIN_LOOP();
+    //GCDandLCMCalculator.MAIN_LOOP();
 
     //EUCLIDEAN ALGORITHM
     //GCDCalculator.MAIN_LOOP();
 
     //FIBBONACI SEQUENCE
+    //fib.MAIN_LOOP();
+
+    //EGYPTIAN FRACTION
+    //egyptianFrac.MAIN_LOOP();
+
+    //MODULAR ARITHMETHIC
 
 
 
