@@ -86,5 +86,11 @@
     <ClInclude Include="PrimeFactorization.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Euclidean.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GCDandLCM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

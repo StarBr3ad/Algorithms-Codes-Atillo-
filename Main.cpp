@@ -4,6 +4,8 @@
 #include "Bitwise.h"
 #include "Sieve.h"
 #include "PrimeFactorization.h"
+#include "Euclidean.h"
+#include "GCDandLCM.h"
 
 using namespace std;
 
@@ -16,6 +18,8 @@ int main()
     Bitwise BIN_BitwiseOperator;
     SieveOfErathosthenes SOECalculator;
     PrimeFactorization primeFactorFinder;
+    Euclidean GCDCalculator;
+    GCDandLCMCalc GCDandLCMCalculator;
 
     writeWarning();
 
@@ -33,7 +37,13 @@ int main()
     //SOECalculator.MAIN_LOOP_SIEVE();
 
     //PRIME FACTORIZATION
-    primeFactorFinder.MAIN_LOOP();
+    //primeFactorFinder.MAIN_LOOP();
+
+    //EUCLIDEAN ALGORITHM
+    //GCDCalculator.MAIN_LOOP();
+
+    //GCD AND LCM CALCULATOR
+    GCDandLCMCalculator.MAIN_LOOP();
 
     //GREEDY ALGOS
 
