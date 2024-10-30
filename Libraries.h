@@ -6,5 +6,6 @@
 #include <sstream>
 #include <iomanip>
 #include <bitset>
+#include <cctype>
 
 using namespace std;

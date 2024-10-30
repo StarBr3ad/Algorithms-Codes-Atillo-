@@ -8,6 +8,7 @@
 #include "GCDandLCM.h"
 #include "Fibbonaci.h"
 #include "EgyptianFrac.h"
+#include "ModArithmetic.h"
 
 using namespace std;
 
@@ -24,6 +25,7 @@ int main()
     GCDandLCMCalc GCDandLCMCalculator;
     Fibbonaci fib;
     NiggasFraction egyptianFrac;
+    ModArithmetic modArithCalc;
 
     writeWarning();
 
@@ -56,7 +58,7 @@ int main()
     //egyptianFrac.MAIN_LOOP();
 
     //MODULAR ARITHMETHIC
-
+    //modArithCalc.MAIN_LOOP();
 
 
     //GREEDY ALGOS

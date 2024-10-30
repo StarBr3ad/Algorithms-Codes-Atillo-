@@ -146,6 +146,7 @@
     <ClInclude Include="Fibbonaci.h" />
     <ClInclude Include="GCDandLCM.h" />
     <ClInclude Include="Libraries.h" />
+    <ClInclude Include="ModArithmetic.h" />
     <ClInclude Include="Operation.h" />
     <ClInclude Include="PrimeFactorization.h" />
     <ClInclude Include="RecyclableMethods.h" />
