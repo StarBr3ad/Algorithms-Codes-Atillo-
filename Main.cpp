@@ -60,11 +60,14 @@ int main()
     //MODULAR ARITHMETHIC
     //modArithCalc.MAIN_LOOP();
 
+    //ENCRYPTION
+    //CAESAR CIPHER
+
 
     //GREEDY ALGOS
 
 
-    //ENCRYPTION
+    
     
 }
 

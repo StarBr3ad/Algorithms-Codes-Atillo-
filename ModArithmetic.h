@@ -2,37 +2,49 @@
 #include "Libraries.h"
 #include "RecyclableMethods.h"
 
-class ModArithmetic
+class ModArithmetic : SieveOfErathosthenes
 {
 	vector<int> numbers;
 	vector<char> operations;
 	int modular; 
 	float arithmeticResult;
-	string input;
+	string inputYawa;
 	bool stopOperation = false;
 
 	public:
 		void MAIN_LOOP()
 		{
-			WriteWarning();
-			cout << "*********ARITHMETIC CALCULATOR*********" << endl;
-			cout << "Modulus: "; cin >> modular; cin.ignore(numeric_limits<streamsize>::max(), '\n'); //CLEARS THE INPUT BUFFER
+			int input = -1, tryAgainFlag = -1;
 
-			newLineMaker(0);
-			WriteWarning2();
-			cout << "Input: "; getline(cin, input);
+			while (tryAgainFlag == -1 || tryAgainFlag == 2)
+			{
+				WriteWarning();
+				cout << "*********ARITHMETIC CALCULATOR*********" << endl;
+				cout << "Modulus: "; cin >> modular; cin.ignore(numeric_limits<streamsize>::max(), '\n'); //CLEARS THE INPUT BUFFER
 
-			storeAllData();
-			if (!stopOperation)
-			{
-				doTheArithmetic();
-				doTheModulusAndDisplayAnswer();
+				newLineMaker(0);
+				WriteWarning2();
+				cout << "Input: "; getline(cin, inputYawa);
+
+				storeAllData();
+				if (!stopOperation)
+				{
+					doTheArithmetic();
+					doTheModulusAndDisplayAnswer();
+				}
+				else
+				{
+					cout << "KILL YOURSELF NEGAE" << endl;
+				}
+				//TEST_display();
+
+				clearBuffer();
+
+				tryAgainFlag = -1;
+				SieveOfErathosthenes::EXIT_MENU_LOOP(tryAgainFlag, input);
 			}
-			else
-			{
-				cout << "KILL YOURSELF NEGAE" << endl;
-			}
-			//TEST_display();
+			
+
 		}
 
 	protected:
@@ -42,24 +54,24 @@ class ModArithmetic
 			bool operatorNotYetRepeated = 1, SpaceNotYetRepeated = 0, digitFound = 0;
 
 			//cout << "input: " << input << " input.size(): " << input.size() << endl;
-			for (int i = 0; i < input.size(); i++)
+			for (int i = 0; i < inputYawa.size(); i++)
 			{
 				//cout << "\ni: " << i << " stopOperation: " << stopOperation << " operatorNotYetRepeated: " << operatorNotYetRepeated << " digitFound: " << digitFound << endl;
-				if (isdigit(input[i]))
+				if (isdigit(inputYawa[i]))
 				{
 					digitFound = true;
 
 					//cout << "DIGIT FOUND " << endl;
-					tempNum += input[i];
+					tempNum += inputYawa[i];
 
 					operatorNotYetRepeated = false;
 					SpaceNotYetRepeated = false;
-					if (i == input.size() - 1)
+					if (i == inputYawa.size() - 1)
 					{
 						pushNumber(tempNum);
 					}
 				}
-				if (isOperator(input[i]))
+				if (isOperator(inputYawa[i]))
 				{
 					//cout << "OPERATOR FOUND " << endl;
 					if (!operatorNotYetRepeated)
@@ -68,14 +80,14 @@ class ModArithmetic
 
 						if (digitFound)
 						{
-							pushOperator(input[i]);
+							pushOperator(inputYawa[i]);
 						}
 						operatorNotYetRepeated = true;
 						SpaceNotYetRepeated = false;
 					}
 					else
 					{
-						if (input[i] == '-')
+						if (inputYawa[i] == '-')
 						{
 							//cout << "NEGATIVE NUMBER" << endl;
 							tempNum += '-';
@@ -88,7 +100,7 @@ class ModArithmetic
 						}
 					}
 				}
-				if (isspace(input[i]))
+				if (isspace(inputYawa[i]))
 				{
 					//cout << "SPACE FOUND " << endl;
 					if (!SpaceNotYetRepeated)
@@ -128,13 +140,22 @@ class ModArithmetic
 
 			newLineMaker(0);
 			cout << "Solution: " << endl;
-			cout << "= " << "(" << input << ") " << "mod " << modular << endl;
+			cout << "= " << "(" << inputYawa << ") " << "mod " << modular << endl;
 			cout << "= " << "(" << arithmeticResult << ") " << "mod " << modular << endl;
 			cout << "= " << answer << " mod " << modular << endl;
 
 			newLineMaker(0);
 			cout << "Answer: " << endl;
 			cout << "= " << answer << " mod " << modular << endl;
+		}
+		void clearBuffer()
+		{
+			numbers.clear();
+			operations.clear();
+			modular = 0;
+			arithmeticResult = 0.0f;
+			inputYawa.clear();
+			stopOperation = false;
 		}
 
 		void pushNumber(string& tempNum)
