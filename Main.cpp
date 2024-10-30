@@ -58,7 +58,10 @@ int main()
     //egyptianFrac.MAIN_LOOP();
 
     //MODULAR ARITHMETHIC
-    //modArithCalc.MAIN_LOOP();
+    modArithCalc.MAIN_LOOP();
+
+    //ENCRYPTION
+    //CAESAR CIPHER
 
     //ENCRYPTION
     //CAESAR CIPHER
