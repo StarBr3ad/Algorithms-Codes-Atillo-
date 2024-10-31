@@ -28,9 +28,6 @@
     <Filter Include="Source Files\Sieve Of Erathosthenes">
       <UniqueIdentifier>{acbe2a4f-4937-49f2-98af-cf84dd551157}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Ceasear Cipher">
-      <UniqueIdentifier>{cfdcb856-7355-4955-ae72-a90224c159d4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\fUCKtorFinder%28Prime Factorization%29">
       <UniqueIdentifier>{a899625a-1356-4632-9aa4-54b358739934}</UniqueIdentifier>
     </Filter>
@@ -57,9 +54,6 @@
     <ClCompile Include="Sieve.cpp">
       <Filter>Source Files\Sieve Of Erathosthenes</Filter>
     </ClCompile>
-    <ClCompile Include="CeasarCipher.cpp">
-      <Filter>Source Files\Ceasear Cipher</Filter>
-    </ClCompile>
     <ClCompile Include="PrimeFactorization.cpp">
       <Filter>Source Files\fUCKtorFinder%28Prime Factorization%29</Filter>
     </ClCompile>
@@ -83,9 +77,6 @@
     <ClInclude Include="Sieve.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CeasarCipher.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="PrimeFactorization.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -102,6 +93,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ModArithmetic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CaesarCipher.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

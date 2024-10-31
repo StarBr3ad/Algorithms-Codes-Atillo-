@@ -9,6 +9,8 @@
 #include "Fibbonaci.h"
 #include "EgyptianFrac.h"
 #include "ModArithmetic.h"
+#include "CaesarCipher.h"
+
 
 using namespace std;
 
@@ -26,6 +28,7 @@ int main()
     Fibbonaci fib;
     NiggasFraction egyptianFrac;
     ModArithmetic modArithCalc;
+    CaesarCipher caesarCipher;
 
     writeWarning();
 
@@ -62,7 +65,7 @@ int main()
 
     //ENCRYPTION
     //CAESAR CIPHER
-
+    caesarCipher.MAIN_LOOP();
 
     //GREEDY ALGOS
 
