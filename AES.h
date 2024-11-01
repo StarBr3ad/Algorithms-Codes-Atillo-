@@ -5,17 +5,23 @@
 class AES
 {
 	protected:
-		Matrix_2S plainText, key, S_BOX;
-		Matrix_2S addroundKey, shiftRowsAndARK;
+		//PREDEFINED
+		Matrix_2S plainText, key, S_BOX, mixColumnMatrix;
+
+		//RESULTS
+		Matrix_2S addroundKey, 
+				  subByte_ShiftRow;  //SUBBYTE AND SHIFTROW 
 
 	public:
 		//CONSTRUCTOR 
 		//ASSIGN EVERY PREQUISITE MATRIX TO LOCAL MATRIX 
-		AES(Matrix_2S plainText, Matrix_2S key, Matrix_2S S_BOX) : addroundKey(4, 4), shiftRowsAndARK(4, 4)
+		AES(Matrix_2S plainText, Matrix_2S key, Matrix_2S S_BOX, Matrix_2S mixColumnMatrix)
+			: addroundKey(4, 4), subByte_ShiftRow(4, 4), mixColumnMatrix(4, 4)
 		{
 			this->plainText.directlyAssignMatrix(plainText);
 			this->key.directlyAssignMatrix(key);
 			this->S_BOX.directlyAssignMatrix(S_BOX);
+			this->mixColumnMatrix.directlyAssignMatrix(mixColumnMatrix);
 		}
 
 		void MAIN_LOOP()
@@ -27,6 +33,8 @@ class AES
 
 			ADDROUNDKEY();
 			SUBBYTES();
+			SHIFTROWS();
+			MIXCOLUMN();
 		}
 
 	protected:
@@ -58,11 +66,11 @@ class AES
 					//DISPLAY IT
 					
 					//REMOVE THE SPACES AND TURN TO BITSET
-						binary1_str.erase(remove(binary1_str.begin(), binary1_str.end(), ' '), binary1_str.end());
+						eraseWhiteSpace(binary1_str);
 						bitset<8> binary1(binary1_str);
 					
 
-						binary2_str.erase(remove(binary2_str.begin(), binary2_str.end(), ' '), binary2_str.end());
+						eraseWhiteSpace(binary2_str);
 						bitset<8> binary2(binary2_str);
 					//REMOVE THE SPACES AND TURN TO BITSET
 
@@ -110,25 +118,82 @@ class AES
 			{
 				for (int j = 0; j < addroundKey.rows; j++)
 				{
+					/// <SEPARATE THE 2 CHAR>
 					bin1 = addroundKey.getMatrixElements(i, j)[0];
 					bin2 = addroundKey.getMatrixElements(i, j)[1];
-
-					answer = S_BOX.getMatrixElements(turnStringToIndex_SUBBYTES(bin1), turnStringToIndex_SUBBYTES(bin2));
 					
-					shiftRowsAndARK.setMatrixElements(i, j, answer);
+					/// <GET THE THE SBOX USING THE SEPARATED CHAR AS INDEX>
+					answer = S_BOX.getMatrixElements(turnStringToIndex_SUBBYTES(bin1), turnStringToIndex_SUBBYTES(bin2));
+
+					
+					/// <ASSIGN THE SBOX VALUE TO SBOX MATRIX>
+					subByte_ShiftRow.setMatrixElements(i, j, answer);
 				}
 			}
-			shiftRowsAndARK.displayMatrix();
+			subByte_ShiftRow.displayMatrix();
 			cout << "******************************************************" << endl;
 		}
 		void SHIFTROWS()
 		{
-			for ()
-			{
+			cout << "\n\n\SHIFTROWS: " << endl;
+			cout << "******************************************************" << endl;
 
+			/// <LEFTSHIFT EVERY COLUMN>
+				for (int i = 0, j = 0; i < subByte_ShiftRow.columns; i++)
+				{
+					leftShift(subByte_ShiftRow.matrix[i], j);
+					j++;
+				}
+			/// <LEFTSHIFT EVERY COLUMN>
+
+			subByte_ShiftRow.displayMatrix();
+			cout << "******************************************************" << endl;
+		}
+		void MIXCOLUMN()
+		{
+			vector<string> SHIFTROWS_Val;
+
+			cout << "\n\n\MIXCOLUMN: " << endl;
+			cout << "******************************************************";
+
+			for (int a = 0; a < 4; a++)
+			{
+				cout << "\nCOLUMN " << a + 1 << " : " << endl;
+				cout << "************************************" << endl;
+
+				///CLEAR AND GET SHIFTROW ENTIRE COLUMN
+					SHIFTROWS_Val.clear();
+					subByte_ShiftRow.getMatrixColumns(SHIFTROWS_Val, (a));
+				///CLEAR AND GET SHIFTROW ENTIRE COLUMN
+
+				///MIXCOLUMN MATRIX LOOP
+				for (int i = 0; i < mixColumnMatrix.columns; i++)
+				{
+					for (int j = 0; j < mixColumnMatrix.rows; j++)
+					{
+						cout << SHIFTROWS_Val[j] << " X " << mixColumnMatrix.getMatrixElements(i, j) << endl;
+
+
+						if ((j + 1) % 4 == 0 && j != 0)
+						{
+							/// END OF COLUMN
+							if (i < 3 || j < 3)
+							{
+								newLineMaker(0);
+							}
+						}
+					}
+				}
+				///MIXCOLUMN MATRIX LOOP
+				cout << "************************************" << endl;
 			}
 		}
 
+		//ADDROUNDKEY FUNCTION
+		void eraseWhiteSpace(string& str)
+		{
+			str.erase(remove(str.begin(), str.end(), ' '), str.end());
+		}
 		string translateToBinary(int column, int row, Matrix_2S matrix)
 		{
 			//ROW AND COLUMN CHECKER
@@ -157,6 +222,7 @@ class AES
 
 			return bin1 + " " + bin2;
 		}
+		//SHIFTROW FUNCTION
 		void leftShift(vector<string>& vec, int shift)
 		{
 			vector<string> tempVec;
@@ -197,6 +263,17 @@ class AES
 
 				cout << "Key : " << endl;
 				key.displayMatrix();
+
+				newLineMaker(0);
+
+				cout << "S-BOX : " << endl;
+				S_BOX.displayMatrix();
+
+				newLineMaker(0);
+
+				cout << "Predefined Matrix : " << endl;
+				mixColumnMatrix.displayMatrix();
+
 				newLineMaker(0);
 			}
 		}

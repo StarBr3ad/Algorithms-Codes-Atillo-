@@ -76,8 +76,7 @@ int main()
 
 
     //AES
-    //PT    
-        //cout << "Plain Text : " << endl;
+    //PLAINTEXT    
         Matrix_2S PlaintText(4, 4);
         vector<string>  PlaintText_row1 = { "20","7A","00","44" },
                         PlaintText_row2 = { "23","BB","11","55" },
@@ -88,13 +87,11 @@ int main()
         PlaintText.pushRow(PlaintText_row2, 1);
         PlaintText.pushRow(PlaintText_row3, 2);
         PlaintText.pushRow(PlaintText_row4, 3);
-        //PlaintText.displayMatrix();
-    //PT
+    //PLAINTEXT
 
     newLineMaker(0);
 
     //KEY
-        //cout << "Key : " << endl;
         Matrix_2S Key(4, 4);
         vector<string>  Key_row1 = { "0F","47","0C","AF" },
                         Key_row2 = { "15","D9","B7","7F" },
@@ -105,11 +102,9 @@ int main()
         Key.pushRow(Key_row2, 1);
         Key.pushRow(Key_row3, 2);
         Key.pushRow(Key_row4, 3);
-        //Key.displayMatrix();
     //KEY
     
     //S-BOX
-        //cout << "S-BOX : " << endl;
         Matrix_2S S_BOX(16, 16);
         vector<string>  S_BOX_row0 = { "63","7C","77","7B","F2","6B","6F","C5","30","01","67","2B","FE","D7","AB","76" },
                         S_BOX_row1 = { "CA","82","C9","7D","FA","59","47","F0","AD","D4","A2","AF","9C","A4","72","C0" },
@@ -143,10 +138,22 @@ int main()
         S_BOX.pushRow(S_BOX_rowD, 13);
         S_BOX.pushRow(S_BOX_rowE, 14);
         S_BOX.pushRow(S_BOX_rowF, 15);
-        //S_BOX.displayMatrix();
     //S-BOX
 
-    AES aes(PlaintText, Key, S_BOX);
+    //PREDEFINE MATRIX
+        Matrix_2S mixColumnMatrix(4, 4);
+        vector<string>  mixColumnMatrix_row1 = { "2","3","1","1" },
+                        mixColumnMatrix_row2 = { "1","2","3","1" },
+                        mixColumnMatrix_row3 = { "1","1","2","3" },
+                        mixColumnMatrix_row4 = { "3","1","1","2" };
+
+        mixColumnMatrix.pushRow(mixColumnMatrix_row1, 0);
+        mixColumnMatrix.pushRow(mixColumnMatrix_row2, 1);
+        mixColumnMatrix.pushRow(mixColumnMatrix_row3, 2);
+        mixColumnMatrix.pushRow(mixColumnMatrix_row4, 3);
+    //PREDEFINE MATRIX
+
+    AES aes(PlaintText, Key, S_BOX, mixColumnMatrix);
     aes.MAIN_LOOP();
 
 }

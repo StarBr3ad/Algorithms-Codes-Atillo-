@@ -40,6 +40,13 @@ public:
 	{
 		return matrix[column][row];
 	}
+	void getMatrixColumns(vector<string>& vec, int rows)
+	{
+		for (int i = 0; i < this->columns; i++)
+		{
+			vec.push_back(getMatrixElements(i, rows));
+		}
+	}
 
 	//ASSIGN DATA
 	void directlyAssignMatrix(Matrix_2S& ref)
@@ -78,6 +85,9 @@ public:
 		table.createTable(matrix, this->rows, this->columns);
 		table.drawTable();
 	}
+	void displayMatrix_RowHeader()
+	{
 
+	}
 protected:
 };
