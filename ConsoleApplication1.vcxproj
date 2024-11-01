@@ -128,9 +128,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AES.cpp" />
     <ClCompile Include="Bitwise.cpp" />
+    <ClCompile Include="DatabaseStyleTable.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="ConverterDebug.cpp" />
+    <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Operation.cpp" />
     <ClCompile Include="PrimeFactorization.cpp" />
     <ClCompile Include="RecyclableMethods.cpp" />
@@ -138,13 +141,16 @@
     <ClCompile Include="Sieve.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AES.h" />
     <ClInclude Include="Bitwise.h" />
     <ClInclude Include="CaesarCipher.h" />
+    <ClInclude Include="DatabaseStyleTable.h" />
     <ClInclude Include="EgyptianFrac.h" />
     <ClInclude Include="Euclidean.h" />
     <ClInclude Include="Fibbonaci.h" />
     <ClInclude Include="GCDandLCM.h" />
     <ClInclude Include="Libraries.h" />
+    <ClInclude Include="Matrix.h" />
     <ClInclude Include="ModArithmetic.h" />
     <ClInclude Include="Operation.h" />
     <ClInclude Include="PrimeFactorization.h" />

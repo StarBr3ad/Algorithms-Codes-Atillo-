@@ -7,5 +7,6 @@
 #include <iomanip>
 #include <bitset>
 #include <cctype>
+#include <algorithm>
 
 using namespace std;

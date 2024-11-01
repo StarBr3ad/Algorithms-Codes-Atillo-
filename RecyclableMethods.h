@@ -1,5 +1,7 @@
 #pragma once
 #include "Converter.h"
+#include "Matrix.h"
+#include "DatabaseStyleTable.h"
 
 string formatFloat(float valueString, int precision = 50);
 void eraseLastCharInString(string& strInput, int eraseScalar);
@@ -22,37 +24,8 @@ float getDecimalPart(float number);
 void separateDecimalAndFraction(string input, int dplace, string& wholeNumber, string& fraction);
 
 
-
-class databaseStyleTable
-{
-	public:
-		void createTable(vector<string> header, vector<string> rows);
-		void createTable(vector<string> header, vector<string> rows, vector<string> column);
-
-		void drawTable();
-		void drawTable(int rows);
-
-
-
-	private:
-		int				rows = 0,				//PA RIGHT
-						columns = 0,			//PA ILALOM
-						spacesInBetween = 0,
-						cIDX_RowData = 0;
-
-		vector<string>	rowHeaderData,
-						columnHeaderData,
-						rowData;
-
-		void insertHeaderData_Row(vector<string> header);
-		void insertRowData(vector<string> rowData);
-
-		void insertHeaderData_Column(vector<string> column);
-
-	void printDivider();
-	void printHeader();
-	void printRows();
-};
-
-
-
+//ENCRYPTION
+//SWITCH CASE YAWA KAPOY NA
+string turnCharToBinary_GR4(char& charAddrs);
+string turnBinary_G4ToHex(string& charAddrs);
+int turnStringToIndex_SUBBYTES(char input);

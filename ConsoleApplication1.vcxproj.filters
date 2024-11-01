@@ -31,6 +31,15 @@
     <Filter Include="Source Files\fUCKtorFinder%28Prime Factorization%29">
       <UniqueIdentifier>{a899625a-1356-4632-9aa4-54b358739934}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\AES">
+      <UniqueIdentifier>{6178e9bc-3095-4e4e-b924-71b423366d72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\RecyclableMethods">
+      <UniqueIdentifier>{b8601e6c-b5fe-4bd5-92a4-08850e538921}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\RecyclableMethods">
+      <UniqueIdentifier>{a8a0061a-1c0f-42e0-96d9-8e9800a79b33}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Converter.cpp">
@@ -45,9 +54,6 @@
     <ClCompile Include="Operation.cpp">
       <Filter>Source Files\Number System Operation</Filter>
     </ClCompile>
-    <ClCompile Include="RecyclableMethods.cpp">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
     <ClCompile Include="Bitwise.cpp">
       <Filter>Source Files\Binary Bitwise Operation</Filter>
     </ClCompile>
@@ -57,12 +63,21 @@
     <ClCompile Include="PrimeFactorization.cpp">
       <Filter>Source Files\fUCKtorFinder%28Prime Factorization%29</Filter>
     </ClCompile>
+    <ClCompile Include="AES.cpp">
+      <Filter>Source Files\AES</Filter>
+    </ClCompile>
+    <ClCompile Include="RecyclableMethods.cpp">
+      <Filter>Source Files\RecyclableMethods</Filter>
+    </ClCompile>
+    <ClCompile Include="DatabaseStyleTable.cpp">
+      <Filter>Source Files\RecyclableMethods</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix.cpp">
+      <Filter>Source Files\RecyclableMethods</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Converter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RecyclableMethods.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Operation.h">
@@ -97,6 +112,18 @@
     </ClInclude>
     <ClInclude Include="CaesarCipher.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AES.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RecyclableMethods.h">
+      <Filter>Header Files\RecyclableMethods</Filter>
+    </ClInclude>
+    <ClInclude Include="DatabaseStyleTable.h">
+      <Filter>Header Files\RecyclableMethods</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix.h">
+      <Filter>Header Files\RecyclableMethods</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

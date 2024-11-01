@@ -1,4 +1,4 @@
-#include "RecyclableMethods.h"
+﻿#include "RecyclableMethods.h"
 
 
 
@@ -388,154 +388,190 @@ void separateDecimalAndFraction(string input, int dplace, string& wholeNumber, s
    
 }
 
-
-
-
-//TABLE MAKER BRO
-    void databaseStyleTable::insertHeaderData_Row(vector<string> header)
+//ENCRYPTION
+//SWITCH CASE YAWA KAPOY NA
+string turnCharToBinary_GR4(char& charAddrs)
+{
+    switch (charAddrs)
     {
-        rows = header.size();
+        case '0':
+            return "0000";
+            break;
+        case '1':
+            return "0001";
+            break;
+        case '2':
+            return "0010";
+            break;
+        case '3':
+            return "0011";
+            break;
+        case '4':
+            return "0100";
+            break;
+        case '5':
+            return "0101";
+            break;
+        case '6':
+            return "0110";
+            break;
+        case '7':
+            return "0111";
+            break;
+        case '8':
+            return "1000";
+            break;
+        case '9':
+            return "1001";
+            break;
 
-        for (int i = 0; i < rows; i++)
-        {
-            //UPDATE THE SIZE OF EVERY DATA (ROW)
-            if ((header[i].size() + 2) > spacesInBetween)
-            {
-                spacesInBetween = (header[i].size() + 2);
-            }
+        case 'a':
+        case 'A':
+            return "1010";
+            break;
 
-            rowHeaderData.push_back(header[i]);
-        }
-    }    
-    void databaseStyleTable::insertRowData(vector<string> rows)
-    {
-        for (int i = 0; i < rows.size(); i++)
-        {
-            //UPDATE THE SIZE OF EVERY DATA (ROW)
-            if ((rows[i].size() + 2) > spacesInBetween)
-            {
-                spacesInBetween = (rows[i].size() + 2);
-            }
+        case 'b':
+        case 'B':
+            return "1011";
+            break;
 
-            rowData.push_back(rows[i]);
-        }
+        case 'c':
+        case 'C':
+            return "1100";
+            break;
+
+        case 'd':
+        case 'D':
+            return "1101";
+            break;
+
+        case 'e':
+        case 'E':
+            return "1110";
+            break;
+
+        case 'f':
+        case 'F':
+            return "1111";
+            break;
+
+        default:
+            cout << "A-F OG 0-9 RA ANIMAL" << endl;
+            break;
     }
-    void databaseStyleTable::insertHeaderData_Column(vector<string> column)
-    {
+}
 
+//YAWAA AHAHAHAHAHAHAHAHAHAHAHAHAHAHA😭😭😭 SHIT SO DISGUSTING 😭
+string turnBinary_G4ToHex(string& charAddrs)
+{
+    if (charAddrs == "0000")
+    {
+        charAddrs = "0";
+    }
+    else if (charAddrs == "0001")
+    {
+        charAddrs = "1";
+    }
+    else if (charAddrs == "0010")
+    {
+        charAddrs = "2";
+    }
+    else if (charAddrs == "0011")
+    {
+        charAddrs = "3";
+    }
+    else if (charAddrs == "0100")
+    {
+        charAddrs = "4";
+    }
+    else if (charAddrs == "0101")
+    {
+        charAddrs = "5";
+    }
+    else if (charAddrs == "0110")
+    {
+        charAddrs = "6";
+    }
+    else if (charAddrs == "0111")
+    {
+        charAddrs = "7";
+    }
+    else if (charAddrs == "1000")
+    {
+        charAddrs = "8";
+    }
+    else if (charAddrs == "1001")
+    {
+        charAddrs = "9";
     }
 
-    void databaseStyleTable::printDivider()
+    else if (charAddrs == "1010")
     {
-        for (int i = 0; i < rows; i++)
-        {
-            cout << "+";
-            for (int j = 0; j < spacesInBetween; j++)
-            {
-                cout << "-";
-            }
-        }
-        cout << "+" << endl;
+        charAddrs = "A";
     }
-    void databaseStyleTable::printHeader()
+    else if (charAddrs == "1011")
     {
-        cout << "|";
-
-        for (int i = 0; i < rows; i++)
-        {
-            string temp = rowHeaderData[i];
-            if ((temp.size() + 2) < spacesInBetween)
-            {
-                temp.insert(0, " ");
-                temp.insert(temp.size(), (spacesInBetween - temp.size()), ' ');
-
-                cout << temp;
-            }
-            else
-            {
-                temp.insert(0, " ");
-                temp.insert(temp.size(), " ");
-                cout << temp;
-
-            }
-            cout << "|";
-        }
-        cout << endl;
+        charAddrs = "B";
     }
-    void databaseStyleTable::printRows()
+    else if (charAddrs == "1100")
     {
-        cout << "|";
-        for (int i = 0; i < rows; i++, cIDX_RowData++)
-        {
-            string temp = rowData[cIDX_RowData];
-
-            if ((temp.size() + 2) < spacesInBetween)
-            {
-                temp.insert(0, " ");
-                temp.insert(temp.size(), (spacesInBetween - temp.size()), ' ');
-
-                cout << temp;
-            }
-            else
-            {
-                temp.insert(0, " ");
-                temp.insert(temp.size(), " ");
-                cout << temp;
-            }
-            cout << "|";
-        }
-        cout << endl;
+        charAddrs = "C";
     }
-
-    
-    void databaseStyleTable::createTable(vector<string> header, vector<string> rows)
+    else if (charAddrs == "1101")
     {
-        insertHeaderData_Row(header);
-        insertRowData(rows);
+        charAddrs = "D";
     }
-    void databaseStyleTable::createTable(vector<string> header, vector<string> rows, vector<string> column)
+    else if (charAddrs == "1110")
     {
-
+        charAddrs = "E";
     }
-
-    void databaseStyleTable::drawTable()
+    else if (charAddrs == "1111")
     {
-        printDivider();
-        printHeader();
-        printDivider();
-
-        int remainderOfRowData = rowData.size() % rows;
-
-        //FIX THE LENGTH OF ROWDATA
-        if (remainderOfRowData != 0)
-        {
-            //LESS THAN (REMAINING NUMBER TO GET 0 REMAINDER) (NAA NAY SULOD TANAN COLUMN)
-            for (int i = 0; i < rows - remainderOfRowData; i++)
-            {
-                rowData.push_back(" ");
-            }
-        }
-
-        columns = rowData.size() / rows;
-
-        for (int i = 0; i < columns; i++)
-        {
-            printRows();
-            printDivider();
-        }
+        charAddrs = "F";
     }
-    void databaseStyleTable::drawTable(int rows)
+    else
     {
-        printDivider();
-        printHeader();
+        cout << "HAHAHAHAHA SHIT CODE GO AHHHH (turnCharToBinary_GR4)" << endl;
+    }
+    return charAddrs;
+}
 
-        for (int i = 0; i < rows; i++)
-        {
-            printDivider();
-            printRows();
-            printDivider();
-        }
-    } 
-//TABLE MAKER BRO
+int turnStringToIndex_SUBBYTES(char input)
+{
+    switch (input)
+    {
+    case 'A':
+        return 10;
+        break;
+
+    case 'B':
+        return 11;
+        break;
+
+    case 'C':
+        return 12;
+        break;
+
+    case 'D':
+        return 13;
+        break;
+
+    case 'E':
+        return 14;
+        break;
+
+    case 'F':
+        return 15;
+        break;
+
+    default:
+        return static_cast<int>(input) - static_cast<int>('0');
+        break;
+    }
+}
+
+
+
+
 
 
