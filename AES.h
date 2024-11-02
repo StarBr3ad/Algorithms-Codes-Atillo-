@@ -2,11 +2,13 @@
 #include "Libraries.h"
 #include "RecyclableMethods.h"
 
-class AES
+class AES : SieveOfErathosthenes
 {
 	protected:
 		//PREDEFINED
-		Matrix_2S plainText, key, S_BOX, mixColumnMatrix;
+		Matrix_2S plainText, key, S_BOX, mixColumnMatrix,
+				  plainText2; //FOR LOOPING HEHE
+					
 
 		//RESULTS
 		Matrix_2S addroundKey,
@@ -20,6 +22,7 @@ class AES
 			: addroundKey(4, 4), subByte_ShiftRow(4, 4), mixColumnMatrix(4, 4), mixColumn(4, 4)
 		{
 			this->plainText.directlyAssignMatrix(plainText);
+			this->plainText2.directlyAssignMatrix(plainText);
 			this->key.directlyAssignMatrix(key);
 			this->S_BOX.directlyAssignMatrix(S_BOX);
 			this->mixColumnMatrix.directlyAssignMatrix(mixColumnMatrix);
@@ -27,27 +30,43 @@ class AES
 
 		void MAIN_LOOP()
 		{
-			int a, rounds, currRound = 0;
-			writeWarning(); newLineMaker(0);
-			cout << "******************ADVANCE ENCRYPTION SYSTEM******************" << endl;
-			cout << "How many rounds? " << endl;
-			cout << "Input : "; cin >> rounds;
-			displayAllMatrixData(a);
+			int a, rounds, currRound = 0, input = -1, tryAgainFlag = -1;
 
-			while (currRound < rounds)
+			while (tryAgainFlag == -1 || tryAgainFlag == 2)
 			{
-				newLineMaker(4);
-				cout << "ROUND " << (currRound + 1) << endl;
-				ADDROUNDKEY();
-				SUBBYTES();
-				SHIFTROWS();
-				MIXCOLUMN();
+				writeWarning(); newLineMaker(0);
+				cout << "******************ADVANCE ENCRYPTION SYSTEM******************" << endl;
+				howManyRounds(rounds);
+				displayAllMatrixData(a);
 
-				prepareBuffersForNextRound();
+				///MAIN CODE
+					while (currRound < rounds)
+					{
+						newLineMaker(4);
+						cout << "ROUND " << (currRound + 1) << endl;
+						ADDROUNDKEY();
+						SUBBYTES();
+						SHIFTROWS();
+						MIXCOLUMN();
 
-				currRound++;
+						prepareBuffersForNextRound();
+
+						currRound++;
+					}
+				///MAIN CODE
+
+				//RESET BUFFER
+					resetBuffers();
+					rounds = 0;
+					currRound = 0;
+					a = 5;
+				//RESET BUFFER
+
+				//EXIT MENU LOOP
+					tryAgainFlag = -1;
+					EXIT_MENU_LOOP(tryAgainFlag, input);
+				//EXIT MENU LOOP
 			}
-
 		}
 
 	protected:
@@ -64,7 +83,7 @@ class AES
 
 			for (int i = 0; i < plainText.columns; i++ )
 			{
-				cout << "COLUMN " <<  i + 1 <<  " : " << endl;
+				cout << "ROW " <<  i + 1 <<  " : " << endl;
 				cout << "************************************" << endl;
 				for (int j = 0; j < plainText.rows; j++)
 				{
@@ -432,8 +451,32 @@ class AES
 				subByte_ShiftRow.clearMatrixData();
 				mixColumn.clearMatrixData();
 			}
+			void resetBuffers()
+			{
+				plainText.directlyAssignMatrix(plainText2);
+				addroundKey.clearMatrixData();
+				subByte_ShiftRow.clearMatrixData();
+				mixColumn.clearMatrixData();
+			}
 		//NEXT ROUND PREPARATION
 
+		void howManyRounds(int& rounds)
+		{
+			do
+			{
+				if (cin.fail())
+				{
+					cin.clear();
+					cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				}
+
+				cout << "How many rounds? " << endl;
+				cout << "Input : "; cin >> rounds;
+
+				newLineMaker(0);
+
+			} while (cin.fail());
+		}
 		void displayAllMatrixData(int& a)
 		{
 			newLineMaker(0);

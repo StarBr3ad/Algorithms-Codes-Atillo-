@@ -84,6 +84,10 @@ int main()
                             PlaintText_row2 = { "23","BB","11","55" },
                             PlaintText_row3 = { "03","CC","22","66" },
                             PlaintText_row4 = { "53","DD","33","77" };
+            /*vector<string>  PlaintText_row1 = { "20","7A","00","44" },
+                            PlaintText_row2 = { "23","BB","11","55" },
+                            PlaintText_row3 = { "03","CC","22","66" },
+                            PlaintText_row4 = { "54","DD","33","77" };*/
             ///CHANGEABLE******************************************************************************************************************************************
 
             PlaintText.setMatrixRows(PlaintText_row1, 0);
@@ -100,7 +104,7 @@ int main()
             vector<string>  Key_row1 = { "0F","47","0C","AF" },
                             Key_row2 = { "15","D9","B7","7F" },
                             Key_row3 = { "71","E8","AD","67" },
-                            Key_row4 = { "E9","59","D6","98" };
+                            Key_row4 = { "C9","59","D6","98" };
             ///CHANGEABLE******************************************************************************************************************************************
             Key.setMatrixRows(Key_row1, 0);
             Key.setMatrixRows(Key_row2, 1);
@@ -165,6 +169,11 @@ int main()
         AES aes(PlaintText, Key, S_BOX, mixColumnMatrix);
         aes.MAIN_LOOP();
     ///AES********************************************************************************************************************************************************************************
+    
+
+    //DES
+
+
 }
 
 void writeWarning()
