@@ -13,7 +13,7 @@ All Number Systems Topic:
 
 Algorithms:
 1.) Euclidian Algorithm (Not Documented)
-2.) Fibonacci Sequence (Not Documented)
+2.) Fibonacci Sequence (Not Documented)	
 3.) Egyptian Fraction (Not Documented)
 4.) Modular Arithmetic (Not Documented)
    • (+, -, *, ^)
@@ -21,7 +21,7 @@ Algorithms:
 Greedy Algorithms:
 Wala pa(╥﹏╥)
 
-MST:
+MST:	
 Wala pa(╥﹏╥)
 
 Encryption:
