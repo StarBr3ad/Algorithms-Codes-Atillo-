@@ -83,10 +83,10 @@ int main()
                         PlaintText_row3 = { "03","CC","22","66" },
                         PlaintText_row4 = { "53","DD","33","77" };
 
-        PlaintText.pushRow(PlaintText_row1, 0);
-        PlaintText.pushRow(PlaintText_row2, 1);
-        PlaintText.pushRow(PlaintText_row3, 2);
-        PlaintText.pushRow(PlaintText_row4, 3);
+        PlaintText.setMatrixRows(PlaintText_row1, 0);
+        PlaintText.setMatrixRows(PlaintText_row2, 1);
+        PlaintText.setMatrixRows(PlaintText_row3, 2);
+        PlaintText.setMatrixRows(PlaintText_row4, 3);
     //PLAINTEXT
 
     newLineMaker(0);
@@ -98,10 +98,10 @@ int main()
                         Key_row3 = { "71","E8","AD","67" },
                         Key_row4 = { "E9","59","D6","98" };
 
-        Key.pushRow(Key_row1, 0);
-        Key.pushRow(Key_row2, 1);
-        Key.pushRow(Key_row3, 2);
-        Key.pushRow(Key_row4, 3);
+        Key.setMatrixRows(Key_row1, 0);
+        Key.setMatrixRows(Key_row2, 1);
+        Key.setMatrixRows(Key_row3, 2);
+        Key.setMatrixRows(Key_row4, 3);
     //KEY
     
     //S-BOX
@@ -122,35 +122,35 @@ int main()
                         S_BOX_rowD = { "70","3E","B5","66","48","03","46","OE","61","35","57","B9","86","C1","1D","9E" },
                         S_BOX_rowE = { "E1","F8","98","11","69","D9","8E","94","9B","1E","87","E9","CE","55","28","DF" },
                         S_BOX_rowF = { "8C","A1","89","0D","BF","E6","42","68","41","99","2D","0F","B0","54","BB","16" };
-        S_BOX.pushRow(S_BOX_row0, 0);
-        S_BOX.pushRow(S_BOX_row1, 1);
-        S_BOX.pushRow(S_BOX_row2, 2);
-        S_BOX.pushRow(S_BOX_row3, 3);
-        S_BOX.pushRow(S_BOX_row4, 4);
-        S_BOX.pushRow(S_BOX_row5, 5);
-        S_BOX.pushRow(S_BOX_row6, 6);
-        S_BOX.pushRow(S_BOX_row7, 7);
-        S_BOX.pushRow(S_BOX_row8, 8);
-        S_BOX.pushRow(S_BOX_row9, 9);
-        S_BOX.pushRow(S_BOX_rowA, 10);
-        S_BOX.pushRow(S_BOX_rowB, 11);
-        S_BOX.pushRow(S_BOX_rowC, 12);
-        S_BOX.pushRow(S_BOX_rowD, 13);
-        S_BOX.pushRow(S_BOX_rowE, 14);
-        S_BOX.pushRow(S_BOX_rowF, 15);
+        S_BOX.setMatrixRows(S_BOX_row0, 0);
+        S_BOX.setMatrixRows(S_BOX_row1, 1);
+        S_BOX.setMatrixRows(S_BOX_row2, 2);
+        S_BOX.setMatrixRows(S_BOX_row3, 3);
+        S_BOX.setMatrixRows(S_BOX_row4, 4);
+        S_BOX.setMatrixRows(S_BOX_row5, 5);
+        S_BOX.setMatrixRows(S_BOX_row6, 6);
+        S_BOX.setMatrixRows(S_BOX_row7, 7);
+        S_BOX.setMatrixRows(S_BOX_row8, 8);
+        S_BOX.setMatrixRows(S_BOX_row9, 9);
+        S_BOX.setMatrixRows(S_BOX_rowA, 10);
+        S_BOX.setMatrixRows(S_BOX_rowB, 11);
+        S_BOX.setMatrixRows(S_BOX_rowC, 12);
+        S_BOX.setMatrixRows(S_BOX_rowD, 13);
+        S_BOX.setMatrixRows(S_BOX_rowE, 14);
+        S_BOX.setMatrixRows(S_BOX_rowF, 15);
     //S-BOX
 
     //PREDEFINE MATRIX
         Matrix_2S mixColumnMatrix(4, 4);
-        vector<string>  mixColumnMatrix_row1 = { "2","3","1","1" },
-                        mixColumnMatrix_row2 = { "1","2","3","1" },
-                        mixColumnMatrix_row3 = { "1","1","2","3" },
-                        mixColumnMatrix_row4 = { "3","1","1","2" };
+        vector<string>  mixColumnMatrix_row1 = { "02","03","01","01" },
+                        mixColumnMatrix_row2 = { "01","02","03","01" },
+                        mixColumnMatrix_row3 = { "01","01","02","03" },
+                        mixColumnMatrix_row4 = { "03","01","01","02" };
 
-        mixColumnMatrix.pushRow(mixColumnMatrix_row1, 0);
-        mixColumnMatrix.pushRow(mixColumnMatrix_row2, 1);
-        mixColumnMatrix.pushRow(mixColumnMatrix_row3, 2);
-        mixColumnMatrix.pushRow(mixColumnMatrix_row4, 3);
+        mixColumnMatrix.setMatrixRows(mixColumnMatrix_row1, 0);
+        mixColumnMatrix.setMatrixRows(mixColumnMatrix_row2, 1);
+        mixColumnMatrix.setMatrixRows(mixColumnMatrix_row3, 2);
+        mixColumnMatrix.setMatrixRows(mixColumnMatrix_row4, 3);
     //PREDEFINE MATRIX
 
     AES aes(PlaintText, Key, S_BOX, mixColumnMatrix);

@@ -460,7 +460,6 @@ string turnCharToBinary_GR4(char& charAddrs)
             break;
     }
 }
-
 //YAWAA AHAHAHAHAHAHAHAHAHAHAHAHAHAHA😭😭😭 SHIT SO DISGUSTING 😭
 string turnBinary_G4ToHex(string& charAddrs)
 {
@@ -535,7 +534,6 @@ string turnBinary_G4ToHex(string& charAddrs)
     }
     return charAddrs;
 }
-
 int turnStringToIndex_SUBBYTES(char input)
 {
     switch (input)
@@ -569,6 +567,7 @@ int turnStringToIndex_SUBBYTES(char input)
         break;
     }
 }
+
 
 
 

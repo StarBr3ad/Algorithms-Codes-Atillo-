@@ -31,11 +31,49 @@ public:
 		}
 	}
 
-	//GETTER AND SETTER
+	//SETTER
 	void setMatrixElements(int column, int row, string data)
 	{
 		matrix[column][row] = data;
 	}
+	void setMatrixRows(vector<string> rows)
+	{
+		if (rows.size() <= this->rows)
+		{
+			this->matrix.push_back(rows);
+		}
+		else
+		{
+			cout << "MATRIX ERROR (pushRow): size not the same as the defined row" << endl;
+		}
+	}
+	void setMatrixRows(vector<string> rows, int columns)
+	{
+		if (rows.size() <= this->rows)
+		{
+			this->matrix[columns] = rows;
+		}
+		else
+		{
+			cout << "MATRIX ERROR (setMatrixRows): size not the same as the defined row" << endl;
+		}
+	}
+	void setMatrixColumns(vector<string> columns, int rowNum)
+	{
+		if (columns.size() <= this->columns)
+		{
+			for (int i = 0; i < columns.size(); i++)
+			{
+				this->matrix[i][rowNum] = columns[i];
+			}
+		}
+		else
+		{
+			cout << "MATRIX ERROR (setMatrixColumns): size not the same as the defined column" << endl;
+		}
+	}
+
+	//GETTER
 	string getMatrixElements(int column, int row)
 	{
 		return matrix[column][row];
@@ -54,28 +92,6 @@ public:
 		this->matrix = ref.matrix;
 		this->rows = ref.rows;
 		this->columns = ref.columns;
-	}
-	void pushRow(vector<string> rows)
-	{
-		if (rows.size() <= this->rows)
-		{
-			this->matrix.push_back(rows);
-		}
-		else
-		{
-			cout << "MATRIX ERROR (pushRow): size not the same as the defined row" << endl;
-		}
-	}
-	void pushRow(vector<string> rows, int columns)
-	{
-		if (rows.size() <= this->rows)
-		{
-			this->matrix[columns] = rows;
-		}
-		else
-		{
-			cout << "MATRIX ERROR (pushRow): size not the same as the defined row" << endl;
-		}
 	}
 
 	//DISPLAY DATA
