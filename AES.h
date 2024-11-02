@@ -27,15 +27,27 @@ class AES
 
 		void MAIN_LOOP()
 		{
-			int a;
+			int a, rounds, currRound = 0;
 			writeWarning(); newLineMaker(0);
 			cout << "******************ADVANCE ENCRYPTION SYSTEM******************" << endl;
-			//displayAllMatrixData(a);
+			cout << "How many rounds? " << endl;
+			cout << "Input : "; cin >> rounds;
+			displayAllMatrixData(a);
 
-			ADDROUNDKEY();
-			SUBBYTES();
-			SHIFTROWS();
-			MIXCOLUMN();
+			while (currRound < rounds)
+			{
+				newLineMaker(4);
+				cout << "ROUND " << (currRound + 1) << endl;
+				ADDROUNDKEY();
+				SUBBYTES();
+				SHIFTROWS();
+				MIXCOLUMN();
+
+				prepareBuffersForNextRound();
+
+				currRound++;
+			}
+
 		}
 
 	protected:
@@ -47,7 +59,7 @@ class AES
 			string result1, result2, hex;
 
 		
-			cout << "\n\n\nADDROUNDKEY SOLUTIONS: " << endl;
+			cout << "ADDROUNDKEY SOLUTIONS: " << endl;
 			cout << "******************************************************" << endl;
 
 			for (int i = 0; i < plainText.columns; i++ )
@@ -412,8 +424,19 @@ class AES
 			}
 		//MIXCOLUMN FUNCTION
 
+		//NEXT ROUND PREPARATION
+			void prepareBuffersForNextRound()
+			{
+				plainText.directlyAssignMatrix(mixColumn);
+				addroundKey.clearMatrixData();
+				subByte_ShiftRow.clearMatrixData();
+				mixColumn.clearMatrixData();
+			}
+		//NEXT ROUND PREPARATION
+
 		void displayAllMatrixData(int& a)
 		{
+			newLineMaker(0);
 			while (a > 2 || a < 0 || cin.fail())
 			{
 				if (cin.fail())

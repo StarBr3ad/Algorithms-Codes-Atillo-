@@ -72,6 +72,16 @@ public:
 			cout << "MATRIX ERROR (setMatrixColumns): size not the same as the defined column" << endl;
 		}
 	}
+	void clearMatrixData()
+	{
+		for (int i = 0; i < columns; i++)
+		{
+			for (int j = 0; j < rows; j++)
+			{
+				matrix[i][j] = "00";
+			}
+		}
+	}
 
 	//GETTER
 	string getMatrixElements(int column, int row)
